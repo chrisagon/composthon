@@ -1,0 +1,11 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the Compostage_init() hook (in hooks/Compostage.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="Compostage-date-<%%VALUE(id)%%>" class="Compostage-date"><%%SELECT%%><%%VALUE(date)%%><%%ENDSELECT%%></td>
+		<td id="Compostage-lieu_compostage-<%%VALUE(id)%%>" class="Compostage-lieu_compostage"><%%SELECT%%><%%VALUE(lieu_compostage)%%><%%ENDSELECT%%></td>
+		<td id="Compostage-matiere-<%%VALUE(id)%%>" class="Compostage-matiere"><%%SELECT%%><%%VALUE(matiere)%%><%%ENDSELECT%%></td>
+		<td id="Compostage-poids-<%%VALUE(id)%%>" class="Compostage-poids text-right"><%%SELECT%%><%%VALUE(poids)%%><%%ENDSELECT%%></td>

@@ -1,0 +1,19 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the Demande_init() hook (in hooks/Demande.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="Demande-type-<%%VALUE(id)%%>" class="Demande-type"><%%VALUE(type)%%></td>
+		<td id="Demande-intervention-<%%VALUE(id)%%>" class="Demande-intervention"><%%VALUE(intervention)%%></td>
+		<td id="Demande-site_compostage-<%%VALUE(id)%%>" class="Demande-site_compostage"><%%VALUE(site_compostage)%%></td>
+		<td id="Demande-site_dechet-<%%VALUE(id)%%>" class="Demande-site_dechet"><%%VALUE(site_dechet)%%></td>
+		<td id="Demande-desc-<%%VALUE(id)%%>" class="Demande-desc"><%%VALUE(desc)%%></td>
+		<td id="Demande-date_lancement-<%%VALUE(id)%%>" class="Demande-date_lancement"><%%VALUE(date_lancement)%%></td>
+		<td id="Demande-date_butoir-<%%VALUE(id)%%>" class="Demande-date_butoir"><%%VALUE(date_butoir)%%></td>
+		<td id="Demande-date_inter-<%%VALUE(id)%%>" class="Demande-date_inter"><%%VALUE(date_inter)%%></td>
+		<td id="Demande-intervenant-<%%VALUE(id)%%>" class="Demande-intervenant"><%%VALUE(intervenant)%%></td>
+		<td id="Demande-prix_unit-<%%VALUE(id)%%>" class="Demande-prix_unit text-right"><%%VALUE(prix_unit)%%></td>
+		<td id="Demande-niveau-<%%VALUE(id)%%>" class="Demande-niveau"><%%VALUE(niveau)%%></td>
+		<td id="Demande-etat-<%%VALUE(id)%%>" class="Demande-etat"><%%VALUE(etat)%%></td>

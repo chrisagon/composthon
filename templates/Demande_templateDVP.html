@@ -1,0 +1,96 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ID</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(id)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Type de demande</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(type)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Type d'Intervention</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(intervention)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Site de compostage</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="site_compostage<%%RND1%%>"><%%COMBOTEXT(site_compostage)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Site de dechet</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="site_dechet<%%RND1%%>"><%%COMBOTEXT(site_dechet)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Description</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(desc)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date de lancement</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(date_lancement)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date butoir</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(date_butoir)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date d'intervention</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(date_inter)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Intervenant</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(intervenant)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Prix unitaire</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(prix_unit)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Niveau d'alerte</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(niveau)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Etat d'avancement</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(etat)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>

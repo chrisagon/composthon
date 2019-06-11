@@ -1,0 +1,13 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the Sites_init() hook (in hooks/Sites.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="Sites-type-<%%VALUE(id)%%>" class="Sites-type"><%%VALUE(type)%%></td>
+		<td id="Sites-nom-<%%VALUE(id)%%>" class="Sites-nom"><%%VALUE(nom)%%></td>
+		<td id="Sites-adress-<%%VALUE(id)%%>" class="Sites-adress"><%%VALUE(adress)%%></td>
+		<td id="Sites-code_postal-<%%VALUE(id)%%>" class="Sites-code_postal"><%%VALUE(code_postal)%%></td>
+		<td id="Sites-ville-<%%VALUE(id)%%>" class="Sites-ville"><%%VALUE(ville)%%></td>
+		<td id="Sites-nbr-<%%VALUE(id)%%>" class="Sites-nbr text-right"><%%VALUE(nbr)%%></td>
