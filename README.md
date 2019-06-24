@@ -13,3 +13,4 @@ Les Brickodeurs ont personnalisés certaines partie du code pour mieux répondre
 
 A la première connexion, vous devez renseigner les identifiants de connexion à la base Mysql et suivre les instructions.
 L'application est pour l'instant vide de données et non paramétrées.
+Supprimer le fichier *config.php* qui sera recréé à la première connexion d'installation.
