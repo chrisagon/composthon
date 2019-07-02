@@ -277,6 +277,16 @@ function Compostage_validateData(){
 	if($j('#poids').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Poids", close: function(){ /* */ $j('[name=poids]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
 	return true;
 }
+function Demande_validateData(){
+	$j('.has-error').removeClass('has-error');
+	/* Field type can't be empty */
+	if($j('#type').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Type de demande", close: function(){ /* */ $j('[name=type]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
+	return true;
+}
+function feedback_validateData(){
+	$j('.has-error').removeClass('has-error');
+	return true;
+}
 function Sites_validateData(){
 	$j('.has-error').removeClass('has-error');
 	/* Field type can't be empty */
@@ -287,22 +297,12 @@ function Sites_validateData(){
 	if($j('#adress').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Adresse", close: function(){ /* */ $j('[name=adress]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
 	return true;
 }
-function Demande_validateData(){
-	$j('.has-error').removeClass('has-error');
-	/* Field type can't be empty */
-	if($j('#type').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Type de demande", close: function(){ /* */ $j('[name=type]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
-	return true;
-}
 function matieres_validateData(){
 	$j('.has-error').removeClass('has-error');
 	/* Field nom can't be empty */
 	if($j('#nom').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Nom", close: function(){ /* */ $j('[name=nom]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
 	/* Field type can't be empty */
 	if($j('#type').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Type", close: function(){ /* */ $j('[name=type]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
-	return true;
-}
-function feedback_validateData(){
-	$j('.has-error').removeClass('has-error');
 	return true;
 }
 

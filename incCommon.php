@@ -46,10 +46,10 @@
 		$arrTables = array(
 			/* 'table_name' => ['table caption', 'homepage description', 'icon', 'table group name'] */   
 			'Compostage' => array('Compostage', 'Indiquez ce que vous compostez', 'resources/table_icons/recycle.png', 'Application'),
-			'Sites' => array('Sites de compostage', 'Liste des sites de compostage.', 'resources/table_icons/google_map.png', 'Application'),
 			'Demande' => array('Demande d\'intervention', 'Demande d\'intervention ou d\'alerte sur un site de compostage', 'resources/table_icons/alarm_bell.png', 'Assistance'),
-			'matieres' => array('Matieres', 'Liste des mati&#232;res compostables', 'resources/table_icons/green.png', 'R&#233;f&#233;rentiels'),
-			'feedback' => array('Feedback Dev', 'Merci d\'utiliser cette fiche de remarque pour nous permettre d\'am&#233;liorer cette application', 'resources/table_icons/bulb.png', 'Assistance')
+			'feedback' => array('Feedback Dev', 'Merci d\'utiliser cette fiche de remarque pour nous permettre d\'am&#233;liorer cette application', 'resources/table_icons/bulb.png', 'Assistance'),
+			'Sites' => array('Sites de compostage', 'Liste des sites de compostage.', 'resources/table_icons/google_map.png', 'R&#233;f&#233;rentiels'),
+			'matieres' => array('Matieres', 'Liste des mati&#232;res compostables', 'resources/table_icons/green.png', 'R&#233;f&#233;rentiels')
 		);
 		if($skip_authentication || getLoggedAdmin()) return $arrTables;
 
@@ -69,7 +69,7 @@
 
 	function get_table_groups($skip_authentication = false){
 		$tables = getTableList($skip_authentication);
-		$all_groups = array('None', 'Application', 'R&#233;f&#233;rentiels', 'Assistance');
+		$all_groups = array('None', 'Application', 'Assistance', 'R&#233;f&#233;rentiels');
 
 		$groups = array();
 		foreach($all_groups as $grp){
@@ -137,10 +137,10 @@
 	function get_sql_fields($table_name){
 		$sql_fields = array(   
 			'Compostage' => "`Compostage`.`id` as 'id', if(`Compostage`.`date`,date_format(`Compostage`.`date`,'%d/%m/%Y'),'') as 'date', IF(    CHAR_LENGTH(`Sites1`.`nom`), CONCAT_WS('',   `Sites1`.`nom`), '') as 'lieu_compostage', IF(    CHAR_LENGTH(`matieres1`.`nom`), CONCAT_WS('',   `matieres1`.`nom`), '') as 'matiere', `Compostage`.`poids` as 'poids'",
+			'Demande' => "`Demande`.`id` as 'id', `Demande`.`type` as 'type', `Demande`.`intervention` as 'intervention', IF(    CHAR_LENGTH(`Sites1`.`nom`), CONCAT_WS('',   `Sites1`.`nom`), '') as 'site_compostage', IF(    CHAR_LENGTH(`Sites2`.`nom`), CONCAT_WS('',   `Sites2`.`nom`), '') as 'site_dechet', `Demande`.`desc` as 'desc', if(`Demande`.`date_lancement`,date_format(`Demande`.`date_lancement`,'%d/%m/%Y'),'') as 'date_lancement', if(`Demande`.`date_butoir`,date_format(`Demande`.`date_butoir`,'%d/%m/%Y'),'') as 'date_butoir', if(`Demande`.`date_inter`,date_format(`Demande`.`date_inter`,'%d/%m/%Y'),'') as 'date_inter', `Demande`.`intervenant` as 'intervenant', `Demande`.`prix_unit` as 'prix_unit', `Demande`.`niveau` as 'niveau', `Demande`.`etat` as 'etat'",
+			'feedback' => "`feedback`.`id` as 'id', `feedback`.`titre` as 'titre', `feedback`.`fonctionnalite` as 'fonctionnalite', `feedback`.`description` as 'description', `feedback`.`plus` as 'plus', `feedback`.`moins` as 'moins', `feedback`.`kanban` as 'kanban', `feedback`.`commentaires` as 'commentaires'",
 			'Sites' => "`Sites`.`id` as 'id', `Sites`.`type` as 'type', `Sites`.`nom` as 'nom', `Sites`.`adress` as 'adress', `Sites`.`code_postal` as 'code_postal', `Sites`.`ville` as 'ville', `Sites`.`nbr` as 'nbr'",
-			'Demande' => "`Demande`.`id` as 'id', `Demande`.`type` as 'type', IF(    CHAR_LENGTH(`Sites1`.`nom`), CONCAT_WS('',   `Sites1`.`nom`), '') as 'site_compostage', `Demande`.`site_dechet` as 'site_dechet', `Demande`.`desc` as 'desc', if(`Demande`.`date_lancement`,date_format(`Demande`.`date_lancement`,'%d/%m/%Y'),'') as 'date_lancement', if(`Demande`.`date_butoir`,date_format(`Demande`.`date_butoir`,'%d/%m/%Y'),'') as 'date_butoir', if(`Demande`.`date_inter`,date_format(`Demande`.`date_inter`,'%d/%m/%Y'),'') as 'date_inter', `Demande`.`intervenant` as 'intervenant', `Demande`.`prix_unit` as 'prix_unit', `Demande`.`niveau` as 'niveau', `Demande`.`etat` as 'etat'",
-			'matieres' => "`matieres`.`id` as 'id', `matieres`.`nom` as 'nom', `matieres`.`type` as 'type', `matieres`.`description` as 'description'",
-			'feedback' => "`feedback`.`id` as 'id', `feedback`.`titre` as 'titre', `feedback`.`fonctionnalite` as 'fonctionnalite', `feedback`.`description` as 'description', `feedback`.`plus` as 'plus', `feedback`.`moins` as 'moins', `feedback`.`kanban` as 'kanban', `feedback`.`commentaires` as 'commentaires'"
+			'matieres' => "`matieres`.`id` as 'id', `matieres`.`nom` as 'nom', `matieres`.`type` as 'type', `matieres`.`description` as 'description'"
 		);
 
 		if(isset($sql_fields[$table_name])){
@@ -155,18 +155,18 @@
 	function get_sql_from($table_name, $skip_permissions = false, $skip_joins = false) {
 		$sql_from = array(   
 			'Compostage' => "`Compostage` LEFT JOIN `Sites` as Sites1 ON `Sites1`.`id`=`Compostage`.`lieu_compostage` LEFT JOIN `matieres` as matieres1 ON `matieres1`.`id`=`Compostage`.`matiere` ",
+			'Demande' => "`Demande` LEFT JOIN `Sites` as Sites1 ON `Sites1`.`id`=`Demande`.`site_compostage` LEFT JOIN `Sites` as Sites2 ON `Sites2`.`id`=`Demande`.`site_dechet` ",
+			'feedback' => "`feedback` ",
 			'Sites' => "`Sites` ",
-			'Demande' => "`Demande` LEFT JOIN `Sites` as Sites1 ON `Sites1`.`id`=`Demande`.`site_compostage` ",
-			'matieres' => "`matieres` ",
-			'feedback' => "`feedback` "
+			'matieres' => "`matieres` "
 		);
 
 		$pkey = array(   
 			'Compostage' => 'id',
-			'Sites' => 'id',
 			'Demande' => 'id',
-			'matieres' => 'id',
-			'feedback' => 'id'
+			'feedback' => 'id',
+			'Sites' => 'id',
+			'matieres' => 'id'
 		);
 
 		if(!isset($sql_from[$table_name])) return false;
@@ -222,18 +222,10 @@
 				'matiere' => '',
 				'poids' => ''
 			),
-			'Sites' => array(
-				'id' => '',
-				'type' => 'Compostage',
-				'nom' => '',
-				'adress' => '',
-				'code_postal' => '',
-				'ville' => '',
-				'nbr' => ''
-			),
 			'Demande' => array(
 				'id' => '',
 				'type' => '',
+				'intervention' => '',
 				'site_compostage' => '',
 				'site_dechet' => '',
 				'desc' => '',
@@ -245,12 +237,6 @@
 				'niveau' => '',
 				'etat' => ''
 			),
-			'matieres' => array(
-				'id' => '',
-				'nom' => '',
-				'type' => '',
-				'description' => ''
-			),
 			'feedback' => array(
 				'id' => '',
 				'titre' => '',
@@ -260,6 +246,21 @@
 				'moins' => '',
 				'kanban' => '',
 				'commentaires' => ''
+			),
+			'Sites' => array(
+				'id' => '',
+				'type' => 'Compostage',
+				'nom' => '',
+				'adress' => '',
+				'code_postal' => '',
+				'ville' => '',
+				'nbr' => ''
+			),
+			'matieres' => array(
+				'id' => '',
+				'nom' => '',
+				'type' => '',
+				'description' => ''
 			)
 		);
 
@@ -343,21 +344,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				
-<!-- RON: Add below line -->				
-  <span class="navbar-brand hidden-xs" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
-<!-- RON: If you don't want it to appear left of navbar-brand then just remove navbar-brand from above class --> 							
-
 				<!-- application title is obtained from the name besides the yellow database icon in AppGini, use underscores for spaces -->
-				<a class="navbar-brand" href="<?php echo PREPEND_PATH; ?>index.php"><i class="glyphicon glyphicon-home"></i> Composthon</a>
+				<a class="navbar-brand" href="<?php echo PREPEND_PATH; ?>index.php"><i class="glyphicon glyphicon-home"></i> composthon</a>
 			</div>
-			
-<!-- RON: Amend below to allow menu on xs home page screens -->
-<!-- RON: FINALLY scroll down to "$menu_wrapper" around line 1036 in my file and change as shown-->		
-
 			<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav hidden-sm hidden-md hidden-lg">
+				<ul class="nav navbar-nav">
+					<?php if(!$home_page){ ?>
 						<?php echo NavMenus(); ?>
+					<?php } ?>
 				</ul>
 
 				<?php if(getLoggedAdmin()){ ?>
@@ -1033,16 +1027,11 @@
 			}
 		}
 
-/* Ron: changes made here, copy below and replace existing/standard Smenu wrapper entry */
-
 		$menu_wrapper = '';
 		for($i = 0; $i < count($menu); $i++){
 			$menu_wrapper .= <<<EOT
-				<li class="nav navbar-nav hidden-xs"> 
-					<ul class="nav navbar-nav" role="menu">{$menu[$i]}</ul>
-				</li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle hidden-sm hidden-md hidden-lg" data-toggle="dropdown">{$table_group_name[$i]} <b class="caret"></b></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">{$table_group_name[$i]} <b class="caret"></b></a>
 					<ul class="dropdown-menu" role="menu">{$menu[$i]}</ul>
 				</li>
 EOT;
@@ -1052,7 +1041,7 @@ EOT;
 	}
 
 	#########################################################
-	
+
 	function StyleSheet(){
 		if(!defined('PREPEND_PATH')) define('PREPEND_PATH', '');
 		$prepend_path = PREPEND_PATH;

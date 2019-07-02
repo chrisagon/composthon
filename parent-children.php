@@ -8,13 +8,13 @@
 		$pcConfig = array(
 			'Compostage' => array(   
 			),
-			'Sites' => array(   
-			),
 			'Demande' => array(   
 			),
-			'matieres' => array(   
-			),
 			'feedback' => array(   
+			),
+			'Sites' => array(   
+			),
+			'matieres' => array(   
 			)
 		);
 

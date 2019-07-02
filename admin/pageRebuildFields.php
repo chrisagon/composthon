@@ -17,15 +17,6 @@
 			'matiere' => array('appgini' => 'INT unsigned not null '),
 			'poids' => array('appgini' => 'DECIMAL(10,2) not null ')
 		),
-		'Sites' => array(   
-			'id' => array('appgini' => 'INT unsigned not null primary key auto_increment '),
-			'type' => array('appgini' => 'VARCHAR(10) not null default \'Compostage\' '),
-			'nom' => array('appgini' => 'VARCHAR(40) not null unique '),
-			'adress' => array('appgini' => 'VARCHAR(80) not null '),
-			'code_postal' => array('appgini' => 'CHAR(5) null '),
-			'ville' => array('appgini' => 'VARCHAR(40) null '),
-			'nbr' => array('appgini' => 'DECIMAL(10,2) null ')
-		),
 		'Demande' => array(   
 			'id' => array('appgini' => 'INT unsigned not null primary key auto_increment '),
 			'type' => array('appgini' => 'VARCHAR(12) not null '),
@@ -41,12 +32,6 @@
 			'niveau' => array('appgini' => 'VARCHAR(40) null '),
 			'etat' => array('appgini' => 'VARCHAR(40) null ')
 		),
-		'matieres' => array(   
-			'id' => array('appgini' => 'INT unsigned not null primary key auto_increment '),
-			'nom' => array('appgini' => 'VARCHAR(40) not null unique '),
-			'type' => array('appgini' => 'VARCHAR(8) not null '),
-			'description' => array('appgini' => 'MEDIUMTEXT null ')
-		),
 		'feedback' => array(   
 			'id' => array('appgini' => 'INT unsigned not null primary key auto_increment '),
 			'titre' => array('appgini' => 'VARCHAR(40) null '),
@@ -56,6 +41,21 @@
 			'moins' => array('appgini' => 'TEXT null '),
 			'kanban' => array('appgini' => 'VARCHAR(40) null '),
 			'commentaires' => array('appgini' => 'TEXT null ')
+		),
+		'Sites' => array(   
+			'id' => array('appgini' => 'INT unsigned not null primary key auto_increment '),
+			'type' => array('appgini' => 'VARCHAR(10) not null default \'Compostage\' '),
+			'nom' => array('appgini' => 'VARCHAR(40) not null unique '),
+			'adress' => array('appgini' => 'VARCHAR(80) not null '),
+			'code_postal' => array('appgini' => 'CHAR(5) null '),
+			'ville' => array('appgini' => 'VARCHAR(40) null '),
+			'nbr' => array('appgini' => 'DECIMAL(10,2) null ')
+		),
+		'matieres' => array(   
+			'id' => array('appgini' => 'INT unsigned not null primary key auto_increment '),
+			'nom' => array('appgini' => 'VARCHAR(40) not null unique '),
+			'type' => array('appgini' => 'VARCHAR(8) not null '),
+			'description' => array('appgini' => 'MEDIUMTEXT null ')
 		)
 	);
 

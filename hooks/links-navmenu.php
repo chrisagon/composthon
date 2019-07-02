@@ -17,5 +17,5 @@
 		'url' => 'hooks/summary-reports-list.php',
 		'title' => 'Rapports graphiques',
 		'groups' => array('*'),
-		'icon' => 'hooks/summary_reports-logo-md.png'
+		'icon' => 'hooks/summary_reports-logo-xs.png'
 	);

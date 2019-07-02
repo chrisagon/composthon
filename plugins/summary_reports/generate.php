@@ -85,8 +85,8 @@ $summary_reports = new summary_reports(array(
 	$summary_reports->recurse_copy($src, $dst, true); 
 	
 	/* Copying SummaryReports Logo */
-	$logo_source_file = dirname(__FILE__)."/summary_reports-logo-md.png";
-	$logo_destination_file = $path.'/hooks/summary_reports-logo-md.png';
+	$logo_source_file = dirname(__FILE__)."/summary_reports-logo-xs.png";
+	$logo_destination_file = $path.'/hooks/summary_reports-logo-xs.png';
 	$summary_reports->copy_file($logo_source_file, $logo_destination_file, true);
 	
 	/* Generating summary-reports-list.php File */
@@ -395,13 +395,13 @@ $summary_reports = new summary_reports(array(
 		'grid_column_classes' => 'col-xs-12 col-sm-6 col-md-6 col-lg-6',
 		'panel_classes' => '',
 		'link_classes' => '',
-		'icon' => 'hooks/summary_reports-logo-md.png',
+		'icon' => 'hooks/summary_reports-logo-xs.png',
 	));
 	$summary_reports->add_link('links-navmenu', array(
 		'url' => 'hooks/summary-reports-list.php',
 		'title' => 'Summary Reports',
 		'groups'=>$summary_reports_links_groups,
-		'icon' => 'hooks/summary_reports-logo-md.png',
+		'icon' => 'hooks/summary_reports-logo-xs.png',
 	));
 	
 	

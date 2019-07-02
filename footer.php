@@ -1,11 +1,8 @@
-			<!-- Add footer template above here -->
-			<div class="clearfix"></div>
-			<?php if(!$_REQUEST['Embedded']){ ?>
-				<div style="height: 70px;" class="hidden-print"></div>
-			<?php } ?>
+<?php
+include_once 'config_lte.php';
 
-		</div> <!-- /div class="container" -->
-		<?php if(!defined('APPGINI_SETUP') && is_file(dirname(__FILE__) . '/hooks/footer-extras.php')){ include(dirname(__FILE__).'/hooks/footer-extras.php'); } ?>
-		<script src="<?php echo PREPEND_PATH; ?>resources/lightbox/js/lightbox.min.js"></script>
-	</body>
-</html>
+    if (getLteStatus()){
+        include_once("footer_lte.php");
+    }else{
+        include_once("footer_old.php");
+    }

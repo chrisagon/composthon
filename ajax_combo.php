@@ -57,8 +57,6 @@
 				'not_null' => true
 			)
 		),
-		'Sites' => array(  
-		),
 		'Demande' => array(   
 			'site_compostage' => array(
 				'parent_table' => 'Sites',
@@ -83,9 +81,11 @@
 				'not_null' => false
 			)
 		),
-		'matieres' => array(  
-		),
 		'feedback' => array(  
+		),
+		'Sites' => array(  
+		),
+		'matieres' => array(  
 		)
 	);
 

@@ -86,8 +86,8 @@
 		$tg = array(
 			'None',
 			'Application',
-			'R&#233;f&#233;rentiels',
-			'Assistance'
+			'Assistance',
+			'R&#233;f&#233;rentiels'
 		);
 
 		$all_tables = array(
@@ -99,24 +99,10 @@
 					'group' => $tg[1],
 					'homepageShowCount' => 1
 				),
-				'Sites' => array(
-					'Caption' => 'Sites de compostage',
-					'Description' => 'Liste des sites de compostage.',
-					'tableIcon' => 'resources/table_icons/google_map.png',
-					'group' => $tg[1],
-					'homepageShowCount' => 1
-				),
 				'Demande' => array(
 					'Caption' => 'Demande d\'intervention',
 					'Description' => 'Demande d\'intervention ou d\'alerte sur un site de compostage',
 					'tableIcon' => 'resources/table_icons/alarm_bell.png',
-					'group' => $tg[3],
-					'homepageShowCount' => 1
-				),
-				'matieres' => array(
-					'Caption' => 'Matieres',
-					'Description' => 'Liste des mati&#232;res compostables',
-					'tableIcon' => 'resources/table_icons/green.png',
 					'group' => $tg[2],
 					'homepageShowCount' => 1
 				),
@@ -124,8 +110,22 @@
 					'Caption' => 'Feedback Dev',
 					'Description' => 'Merci d\'utiliser cette fiche de remarque pour nous permettre d\'am&#233;liorer cette application',
 					'tableIcon' => 'resources/table_icons/bulb.png',
-					'group' => $tg[3],
+					'group' => $tg[2],
 					'homepageShowCount' => 0
+				),
+				'Sites' => array(
+					'Caption' => 'Sites de compostage',
+					'Description' => 'Liste des sites de compostage.',
+					'tableIcon' => 'resources/table_icons/google_map.png',
+					'group' => $tg[3],
+					'homepageShowCount' => 1
+				),
+				'matieres' => array(
+					'Caption' => 'Matieres',
+					'Description' => 'Liste des mati&#232;res compostables',
+					'tableIcon' => 'resources/table_icons/green.png',
+					'group' => $tg[3],
+					'homepageShowCount' => 1
 				)
 		);
 
@@ -143,10 +143,10 @@
 		function getTableList($skip_authentication = false){
 			$arrTables = array(   
 				'Compostage' => 'Compostage',
-				'Sites' => 'Sites de compostage',
 				'Demande' => 'Demande d\'intervention',
-				'matieres' => 'Matieres',
-				'feedback' => 'Feedback Dev'
+				'feedback' => 'Feedback Dev',
+				'Sites' => 'Sites de compostage',
+				'matieres' => 'Matieres'
 			);
 
 			return $arrTables;

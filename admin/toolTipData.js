@@ -29,24 +29,6 @@ Compostage_delete1Tip=["",spacer+"This option allows each member of the group to
 Compostage_delete2Tip=["",spacer+"This option allows each member of the group to delete any record owned by any member of the group in the 'Compostage' table."];
 Compostage_delete3Tip=["",spacer+"This option allows each member of the group to delete any records in the 'Compostage' table."];
 
-// Sites table
-Sites_addTip=["",spacer+"This option allows all members of the group to add records to the 'Sites de compostage' table. A member who adds a record to the table becomes the 'owner' of that record."];
-
-Sites_view0Tip=["",spacer+"This option prohibits all members of the group from viewing any record in the 'Sites de compostage' table."];
-Sites_view1Tip=["",spacer+"This option allows each member of the group to view only his own records in the 'Sites de compostage' table."];
-Sites_view2Tip=["",spacer+"This option allows each member of the group to view any record owned by any member of the group in the 'Sites de compostage' table."];
-Sites_view3Tip=["",spacer+"This option allows each member of the group to view all records in the 'Sites de compostage' table."];
-
-Sites_edit0Tip=["",spacer+"This option prohibits all members of the group from modifying any record in the 'Sites de compostage' table."];
-Sites_edit1Tip=["",spacer+"This option allows each member of the group to edit only his own records in the 'Sites de compostage' table."];
-Sites_edit2Tip=["",spacer+"This option allows each member of the group to edit any record owned by any member of the group in the 'Sites de compostage' table."];
-Sites_edit3Tip=["",spacer+"This option allows each member of the group to edit any records in the 'Sites de compostage' table, regardless of their owner."];
-
-Sites_delete0Tip=["",spacer+"This option prohibits all members of the group from deleting any record in the 'Sites de compostage' table."];
-Sites_delete1Tip=["",spacer+"This option allows each member of the group to delete only his own records in the 'Sites de compostage' table."];
-Sites_delete2Tip=["",spacer+"This option allows each member of the group to delete any record owned by any member of the group in the 'Sites de compostage' table."];
-Sites_delete3Tip=["",spacer+"This option allows each member of the group to delete any records in the 'Sites de compostage' table."];
-
 // Demande table
 Demande_addTip=["",spacer+"This option allows all members of the group to add records to the 'Demande d'intervention' table. A member who adds a record to the table becomes the 'owner' of that record."];
 
@@ -65,24 +47,6 @@ Demande_delete1Tip=["",spacer+"This option allows each member of the group to de
 Demande_delete2Tip=["",spacer+"This option allows each member of the group to delete any record owned by any member of the group in the 'Demande d'intervention' table."];
 Demande_delete3Tip=["",spacer+"This option allows each member of the group to delete any records in the 'Demande d'intervention' table."];
 
-// matieres table
-matieres_addTip=["",spacer+"This option allows all members of the group to add records to the 'Matieres' table. A member who adds a record to the table becomes the 'owner' of that record."];
-
-matieres_view0Tip=["",spacer+"This option prohibits all members of the group from viewing any record in the 'Matieres' table."];
-matieres_view1Tip=["",spacer+"This option allows each member of the group to view only his own records in the 'Matieres' table."];
-matieres_view2Tip=["",spacer+"This option allows each member of the group to view any record owned by any member of the group in the 'Matieres' table."];
-matieres_view3Tip=["",spacer+"This option allows each member of the group to view all records in the 'Matieres' table."];
-
-matieres_edit0Tip=["",spacer+"This option prohibits all members of the group from modifying any record in the 'Matieres' table."];
-matieres_edit1Tip=["",spacer+"This option allows each member of the group to edit only his own records in the 'Matieres' table."];
-matieres_edit2Tip=["",spacer+"This option allows each member of the group to edit any record owned by any member of the group in the 'Matieres' table."];
-matieres_edit3Tip=["",spacer+"This option allows each member of the group to edit any records in the 'Matieres' table, regardless of their owner."];
-
-matieres_delete0Tip=["",spacer+"This option prohibits all members of the group from deleting any record in the 'Matieres' table."];
-matieres_delete1Tip=["",spacer+"This option allows each member of the group to delete only his own records in the 'Matieres' table."];
-matieres_delete2Tip=["",spacer+"This option allows each member of the group to delete any record owned by any member of the group in the 'Matieres' table."];
-matieres_delete3Tip=["",spacer+"This option allows each member of the group to delete any records in the 'Matieres' table."];
-
 // feedback table
 feedback_addTip=["",spacer+"This option allows all members of the group to add records to the 'Feedback Dev' table. A member who adds a record to the table becomes the 'owner' of that record."];
 
@@ -100,6 +64,42 @@ feedback_delete0Tip=["",spacer+"This option prohibits all members of the group f
 feedback_delete1Tip=["",spacer+"This option allows each member of the group to delete only his own records in the 'Feedback Dev' table."];
 feedback_delete2Tip=["",spacer+"This option allows each member of the group to delete any record owned by any member of the group in the 'Feedback Dev' table."];
 feedback_delete3Tip=["",spacer+"This option allows each member of the group to delete any records in the 'Feedback Dev' table."];
+
+// Sites table
+Sites_addTip=["",spacer+"This option allows all members of the group to add records to the 'Sites de compostage' table. A member who adds a record to the table becomes the 'owner' of that record."];
+
+Sites_view0Tip=["",spacer+"This option prohibits all members of the group from viewing any record in the 'Sites de compostage' table."];
+Sites_view1Tip=["",spacer+"This option allows each member of the group to view only his own records in the 'Sites de compostage' table."];
+Sites_view2Tip=["",spacer+"This option allows each member of the group to view any record owned by any member of the group in the 'Sites de compostage' table."];
+Sites_view3Tip=["",spacer+"This option allows each member of the group to view all records in the 'Sites de compostage' table."];
+
+Sites_edit0Tip=["",spacer+"This option prohibits all members of the group from modifying any record in the 'Sites de compostage' table."];
+Sites_edit1Tip=["",spacer+"This option allows each member of the group to edit only his own records in the 'Sites de compostage' table."];
+Sites_edit2Tip=["",spacer+"This option allows each member of the group to edit any record owned by any member of the group in the 'Sites de compostage' table."];
+Sites_edit3Tip=["",spacer+"This option allows each member of the group to edit any records in the 'Sites de compostage' table, regardless of their owner."];
+
+Sites_delete0Tip=["",spacer+"This option prohibits all members of the group from deleting any record in the 'Sites de compostage' table."];
+Sites_delete1Tip=["",spacer+"This option allows each member of the group to delete only his own records in the 'Sites de compostage' table."];
+Sites_delete2Tip=["",spacer+"This option allows each member of the group to delete any record owned by any member of the group in the 'Sites de compostage' table."];
+Sites_delete3Tip=["",spacer+"This option allows each member of the group to delete any records in the 'Sites de compostage' table."];
+
+// matieres table
+matieres_addTip=["",spacer+"This option allows all members of the group to add records to the 'Matieres' table. A member who adds a record to the table becomes the 'owner' of that record."];
+
+matieres_view0Tip=["",spacer+"This option prohibits all members of the group from viewing any record in the 'Matieres' table."];
+matieres_view1Tip=["",spacer+"This option allows each member of the group to view only his own records in the 'Matieres' table."];
+matieres_view2Tip=["",spacer+"This option allows each member of the group to view any record owned by any member of the group in the 'Matieres' table."];
+matieres_view3Tip=["",spacer+"This option allows each member of the group to view all records in the 'Matieres' table."];
+
+matieres_edit0Tip=["",spacer+"This option prohibits all members of the group from modifying any record in the 'Matieres' table."];
+matieres_edit1Tip=["",spacer+"This option allows each member of the group to edit only his own records in the 'Matieres' table."];
+matieres_edit2Tip=["",spacer+"This option allows each member of the group to edit any record owned by any member of the group in the 'Matieres' table."];
+matieres_edit3Tip=["",spacer+"This option allows each member of the group to edit any records in the 'Matieres' table, regardless of their owner."];
+
+matieres_delete0Tip=["",spacer+"This option prohibits all members of the group from deleting any record in the 'Matieres' table."];
+matieres_delete1Tip=["",spacer+"This option allows each member of the group to delete only his own records in the 'Matieres' table."];
+matieres_delete2Tip=["",spacer+"This option allows each member of the group to delete any record owned by any member of the group in the 'Matieres' table."];
+matieres_delete3Tip=["",spacer+"This option allows each member of the group to delete any records in the 'Matieres' table."];
 
 /*
 	Style syntax:

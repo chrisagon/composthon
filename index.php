@@ -16,5 +16,5 @@
 		if(isset($_GET['loginFailed'])) @header('HTTP/1.0 403 Forbidden');
 		include("{$currDir}/login.php");
 	} else {
-		include("{$currDir}/home.php");
+		include("{$currDir}/home_lte.php");
 	}

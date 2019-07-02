@@ -112,14 +112,14 @@
 	/* the profile page view */
 	include_once("$currDir/header.php"); ?>
 
-	<div class="page-header">
-		<h1><?php echo sprintf($Translation['Hello user'], $mi['username']); ?></h1>
-	</div>
-	<div id="notify" class="alert alert-success" style="display: none;"></div>
-	<div id="loader" style="display: none;"><i class="glyphicon glyphicon-refresh"></i> <?php echo $Translation['Loading ...']; ?></div>
-
-	<?php echo csrf_token(); ?>
 	<div class="row">
+		<div class="page-header">
+			<h1 class="text-center"><?php echo sprintf($Translation['Hello user'], $mi['username']); ?></h1>
+		</div>
+		<div id="notify" class="alert alert-success" style="display: none;"></div>
+		<div id="loader" style="display: none;"><i class="glyphicon glyphicon-refresh"></i> <?php echo $Translation['Loading ...']; ?></div>
+
+		<?php echo csrf_token(); ?>
 
 		<div class="col-md-6">
 
@@ -210,6 +210,10 @@
 
 		<div class="col-md-6">
 
+		<?php /* Inserted by Membership Profile Image */ ?>
+		<?php echo file_get_contents('hooks/mpi_template.html');?>
+		<?php /* End of Membership Profile Image code */ ?>
+					
 			<!-- group and IP address -->
 			<div class="panel panel-info">
 				<div class="panel-body">

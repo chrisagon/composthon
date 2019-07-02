@@ -1,13 +1,28 @@
-<!-- Edit this file to change the layout of each record in the table view -->
-<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+		<td colspan="6" class="row">
+			<div class="col-md-6">
+				<dl class="dl-horizontal">
+					<dt class="Sites-type-caption field-caption-tv">Type de site de d&#233;chet</dt>
+					<dd id="Sites-type-<%%VALUE(id)%%>" class="Sites-type"><%%SELECT%%><%%VALUE(type)%%><%%ENDSELECT%%></dd>
 
-<!-- If you wish to hide the table view header that contains the column titles, -->
-<!-- add the following to the Sites_init() hook (in hooks/Sites.php file) -->
-<!--     $options->ShowTableHeader = 0;     -->
+					<dt class="Sites-nom-caption field-caption-tv">Nom du site</dt>
+					<dd id="Sites-nom-<%%VALUE(id)%%>" class="Sites-nom"><%%SELECT%%><%%VALUE(nom)%%><%%ENDSELECT%%></dd>
 
-		<td id="Sites-type-<%%VALUE(id)%%>" class="Sites-type"><%%SELECT%%><%%VALUE(type)%%><%%ENDSELECT%%></td>
-		<td id="Sites-nom-<%%VALUE(id)%%>" class="Sites-nom"><%%SELECT%%><%%VALUE(nom)%%><%%ENDSELECT%%></td>
-		<td id="Sites-adress-<%%VALUE(id)%%>" class="Sites-adress"><%%SELECT%%><%%VALUE(adress)%%><%%ENDSELECT%%></td>
-		<td id="Sites-code_postal-<%%VALUE(id)%%>" class="Sites-code_postal"><%%SELECT%%><%%VALUE(code_postal)%%><%%ENDSELECT%%></td>
-		<td id="Sites-ville-<%%VALUE(id)%%>" class="Sites-ville"><%%SELECT%%><%%VALUE(ville)%%><%%ENDSELECT%%></td>
-		<td id="Sites-nbr-<%%VALUE(id)%%>" class="Sites-nbr text-right"><%%SELECT%%><%%VALUE(nbr)%%><%%ENDSELECT%%></td>
+					<dt class="Sites-adress-caption field-caption-tv">Adresse</dt>
+					<dd id="Sites-adress-<%%VALUE(id)%%>" class="Sites-adress"><%%SELECT%%><%%VALUE(adress)%%><%%ENDSELECT%%></dd>
+
+				</dl>
+			</div>
+			<div class="col-md-6">
+				<dl class="dl-horizontal">
+					<dt class="Sites-code_postal-caption field-caption-tv">Code postal</dt>
+					<dd id="Sites-code_postal-<%%VALUE(id)%%>" class="Sites-code_postal"><%%SELECT%%><%%VALUE(code_postal)%%><%%ENDSELECT%%></dd>
+
+					<dt class="Sites-ville-caption field-caption-tv">Ville</dt>
+					<dd id="Sites-ville-<%%VALUE(id)%%>" class="Sites-ville"><%%SELECT%%><%%VALUE(ville)%%><%%ENDSELECT%%></dd>
+
+					<dt class="Sites-nbr-caption field-caption-tv">Nombre de semaines d'ouverture</dt>
+					<dd id="Sites-nbr-<%%VALUE(id)%%>" class="Sites-nbr text-right"><%%SELECT%%><%%VALUE(nbr)%%><%%ENDSELECT%%></dd>
+
+				</dl>
+			</div>
+		</td>

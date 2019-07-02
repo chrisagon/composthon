@@ -11,13 +11,13 @@
 		}
 
 		// set up tables
-		setupTable('Compostage', "create table if not exists `Compostage` (   `id` INT unsigned not null auto_increment , primary key (`id`), `date` DATE null , `lieu_compostage` INT unsigned not null , `matiere` INT unsigned not null , `poids` DECIMAL(10,2) not null ) CHARSET utf8", $silent, array( " ALTER TABLE `Compostage` CHANGE `poids` `poids` DATE not null "," ALTER TABLE `Compostage` CHANGE `poids` `poids` DECIMAL(10,2) not null "));
+		setupTable('Compostage', "create table if not exists `Compostage` (   `id` INT unsigned not null auto_increment , primary key (`id`), `date` DATE null , `lieu_compostage` INT unsigned not null , `matiere` INT unsigned not null , `poids` DECIMAL(10,2) not null ) CHARSET utf8", $silent);
 		setupIndexes('Compostage', array('lieu_compostage','matiere'));
-		setupTable('Sites', "create table if not exists `Sites` (   `id` INT unsigned not null auto_increment , primary key (`id`), `type` VARCHAR(10) not null default 'Compostage' , `nom` VARCHAR(40) not null , unique `nom_unique` (`nom`), `adress` VARCHAR(80) not null , `code_postal` CHAR(5) null , `ville` VARCHAR(40) null , `nbr` DECIMAL(10,2) null ) CHARSET utf8", $silent);
 		setupTable('Demande', "create table if not exists `Demande` (   `id` INT unsigned not null auto_increment , primary key (`id`), `type` VARCHAR(12) not null , `intervention` VARCHAR(40) null , `site_compostage` INT unsigned null , `site_dechet` INT unsigned null , `desc` TEXT null , `date_lancement` DATE null , `date_butoir` DATE null , `date_inter` DATE null , `intervenant` VARCHAR(40) null , `prix_unit` DECIMAL(10,2) null , `niveau` VARCHAR(40) null , `etat` VARCHAR(40) null ) CHARSET utf8", $silent);
 		setupIndexes('Demande', array('site_compostage','site_dechet'));
-		setupTable('matieres', "create table if not exists `matieres` (   `id` INT unsigned not null auto_increment , primary key (`id`), `nom` VARCHAR(40) not null , unique `nom_unique` (`nom`), `type` VARCHAR(8) not null , `description` MEDIUMTEXT null ) CHARSET utf8", $silent);
 		setupTable('feedback', "create table if not exists `feedback` (   `id` INT unsigned not null auto_increment , primary key (`id`), `titre` VARCHAR(40) null , `fonctionnalite` TEXT null , `description` TEXT null , `plus` TEXT null , `moins` TEXT null , `kanban` VARCHAR(40) null , `commentaires` TEXT null ) CHARSET utf8", $silent);
+		setupTable('Sites', "create table if not exists `Sites` (   `id` INT unsigned not null auto_increment , primary key (`id`), `type` VARCHAR(10) not null default 'Compostage' , `nom` VARCHAR(40) not null , unique `nom_unique` (`nom`), `adress` VARCHAR(80) not null , `code_postal` CHAR(5) null , `ville` VARCHAR(40) null , `nbr` DECIMAL(10,2) null ) CHARSET utf8", $silent);
+		setupTable('matieres', "create table if not exists `matieres` (   `id` INT unsigned not null auto_increment , primary key (`id`), `nom` VARCHAR(40) not null , unique `nom_unique` (`nom`), `type` VARCHAR(8) not null , `description` MEDIUMTEXT null ) CHARSET utf8", $silent);
 
 
 		// save MD5
